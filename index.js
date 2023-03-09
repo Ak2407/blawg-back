@@ -1,4 +1,5 @@
 const express = require('express');
+const PORT = process.env.PORT || 6969
 
 // const chalk = require('chalk'); // Terminal Style
 // dotenv.config(); // read all the key from .env file and load in process.env
@@ -14,9 +15,9 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use('/', require('./routes/route'));
 
-const server = app.listen(1234, (err) => {
+const server = app.listen(PORT, (err) => {
     if (err) {
         console.log(err);
     }
-    console.log("Server is running on port 1234");
+    console.log(`Server is running on port ${PORT}`);
 });
